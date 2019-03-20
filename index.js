@@ -30,7 +30,7 @@ var NUnitReporter = function(baseReporterDecorator, config, logger, helper, form
   var initliazeXmlForBrowser = function(browser) {
 
     var suite = suites[browser.id] = xml.ele('test-suite', {
-      name: browser.name
+      name: (pkgName ? pkgName + ' (' + browser.name +')' : browser.name)
     });
     
     results[browser.id] = suite.ele('results');
